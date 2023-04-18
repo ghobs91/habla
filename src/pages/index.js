@@ -30,7 +30,7 @@ export default function Home() {
   const relayUrls = relays.map((r) => r.url);
   const followsFeed = useNostrEvents({
     filter: {
-      kinds: [30023],
+      kinds: [1],
       limit: 20,
       authors: follows,
     },
@@ -38,7 +38,7 @@ export default function Home() {
   });
   const allFeed = useNostrEvents({
     filter: {
-      kinds: [30023],
+      kinds: [1],
       limit: 20,
     },
     enabled: !followsOnly,

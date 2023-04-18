@@ -14,6 +14,7 @@ function formatTime(time) {
 
 export default function EventItem({ relays, event, reactions }) {
   const metadata = getMetadata(event);
+  // console.log("metadata: ", metadata);
   const href = `/a/${encodeNaddr(event, relays.slice(0, 5))}`;
   return (
     <Flex

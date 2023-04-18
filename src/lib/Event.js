@@ -42,6 +42,7 @@ export default function Event({
   useCached(`event:${getEventId(event)}`, event, { isEvent: true });
   const { hash } = useLocation();
   const metadata = getMetadata(event);
+  // console.log("metadata: ", metadata);
   const isSensitive = metadata.sensitive;
   const isBounty = metadata.reward !== null;
   const [blurPictures, setBlurPictures] = useState(isSensitive);
@@ -97,7 +98,7 @@ export default function Event({
         )}
         <Link to={href}>
           <Heading fontFamily="var(--article-heading)" as="h1">
-            {metadata.title}
+            {metadata.content}
           </Heading>
           {!isPreview && seenIn}
           <Flex alignItems="flex-start">
@@ -130,7 +131,7 @@ export default function Event({
         <div className="content">
           {!isPreview && <Markdown content={event.content} tags={event.tags} />}
         </div>
-        {isPreview && seenIn}
+        {/* {isPreview && seenIn} */}
         <Hashtags hashtags={metadata?.hashtags ?? []} />
         <Reactions
           relays={relays}

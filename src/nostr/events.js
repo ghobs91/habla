@@ -85,6 +85,7 @@ export function getMetadata(ev) {
     sensitive: Boolean(warning),
     warning: warning,
     reward: /^\d+$/.test(reward) ? Number(reward) : null,
+    content: ev.content
   };
 }
 
