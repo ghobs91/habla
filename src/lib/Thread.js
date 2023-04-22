@@ -70,7 +70,7 @@ export function Reply({ root, event, showReply, setShowReply, relays }) {
       ev.tags.push(["e", event.id, relays[0] ?? "", "reply"]);
     }
     ev.tags.push(["p", event.pubkey, relays[0] ?? ""]);
-    if (event.kind === 30023) {
+    if (event.kind === 1) {
       ev.tags.push(["a", naddr, relays[0] ?? ""]);
     }
     try {

@@ -154,7 +154,7 @@ export default function Reactions({
     return entries;
   }, [events]);
   const reactions = dedupeByPubkey(events.filter((e) => e.kind === 7));
-  const mentions = events.filter((e) => e.kind === 30023);
+  const mentions = events.filter((e) => e.kind === 1);
   const liked = likes.find((e) => e.pubkey === user);
   const zaps = events.filter((e) => e.kind === 9735);
   const zappers = useMemo(() => {

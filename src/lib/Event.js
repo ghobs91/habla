@@ -98,7 +98,7 @@ export default function Event({
         )}
         <Link to={href}>
           <Heading fontFamily="var(--article-heading)" as="h1">
-            {metadata.content}
+            {/* {metadata.content} */}
           </Heading>
           {!isPreview && seenIn}
           <Flex alignItems="flex-start">
@@ -116,7 +116,7 @@ export default function Event({
           {metadata.image && (
             <Image className="article-image" src={metadata.image} />
           )}
-          {metadata.summary && isPreview && <p>{metadata.summary}</p>}
+          {metadata.content && isPreview && <p>{metadata.content}</p>}
           {metadata.summary && !isPreview && (
             <blockquote className="summary">{metadata.summary}</blockquote>
           )}

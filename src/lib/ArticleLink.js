@@ -8,10 +8,10 @@ export default function ArticleLink({ d, pubkey }) {
     filter: {
       authors: [pubkey],
       "#d": [d],
-      kinds: [30023],
+      kinds: [1],
     },
   });
-  const ev = useCached(`30023:${pubkey}:${d}`, events[0]);
+  const ev = useCached(`1:${pubkey}:${d}`, events[0]);
 
   return ev ? (
     <Link key={getEventId(ev)} to={`/${pubkey}/${d}`}>

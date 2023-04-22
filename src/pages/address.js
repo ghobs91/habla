@@ -19,7 +19,7 @@ export default function AddressPage() {
     window.scrollTo(0, 0);
   }, [naddr]);
   const filter = {
-    kinds: [30023],
+    kinds: [1],
     limit: 5,
     authors: [pubkey],
   };

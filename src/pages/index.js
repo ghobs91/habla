@@ -24,14 +24,14 @@ const HOT = "hot";
 const TOP = "top";
 
 export default function Home() {
-  const [followsOnly, setFollowsOnly] = useState(false);
+  const [followsOnly, setFollowsOnly] = useState(true);
   const [sortBy, setSortBy] = useState(RECENT);
   const { user, relays, follows, selectedRelay } = useSelector((s) => s.relay);
   const relayUrls = relays.map((r) => r.url);
   const followsFeed = useNostrEvents({
     filter: {
       kinds: [1],
-      limit: 20,
+      limit: 100,
       authors: follows,
     },
     enabled: followsOnly,
@@ -39,7 +39,7 @@ export default function Home() {
   const allFeed = useNostrEvents({
     filter: {
       kinds: [1],
-      limit: 20,
+      limit: 100,
     },
     enabled: !followsOnly,
   });
@@ -115,9 +115,9 @@ export default function Home() {
       <Layout
         aside={
           <Flex flexDirection="column" as="aside" width={320} p={4} pr={4}>
-            <Authors events={filteredEvents} relays={relayUrls} />
             <Tags events={filteredEvents} />
-            <Relays />
+            {/* <Authors events={filteredEvents} relays={relayUrls} />
+            <Relays /> */}
           </Flex>
         }
       >

@@ -25,7 +25,7 @@ export default function Relay() {
   const { user, follows } = useSelector((s) => s.relay);
   const followsFeed = useNostrEvents({
     filter: {
-      kinds: [30023],
+      kinds: [1],
       limit: 100,
       authors: follows,
     },
@@ -34,7 +34,7 @@ export default function Relay() {
   });
   const allFeed = useNostrEvents({
     filter: {
-      kinds: [30023],
+      kinds: [1],
       limit: 100,
     },
     enabled: !followsOnly,

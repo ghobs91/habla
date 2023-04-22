@@ -11,7 +11,7 @@ export default function Profile({ pubkey, relays }) {
   const { events, seenByRelay } = useNostrEvents({
     filter: {
       authors: [pubkey],
-      kinds: [30023],
+      kinds: [1],
     },
     relays,
   });

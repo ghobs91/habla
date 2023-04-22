@@ -18,11 +18,11 @@ export default function Article({ d, pubkey, relays = [], reactions = [] }) {
     filter: {
       authors: [pubkey],
       "#d": [d],
-      kinds: [30023],
+      kinds: [1],
     },
     relays,
   });
-  const ev = useCached(`event:30023:${pubkey}:${d}`, events[0], {
+  const ev = useCached(`event:1:${pubkey}:${d}`, events[0], {
     isEvent: true,
   });
   function rebroadcast() {

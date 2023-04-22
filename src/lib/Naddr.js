@@ -29,7 +29,7 @@ export default function Naddr({ naddr, kind, pubkey, d }) {
     return <Badge ev={ev} />;
   }
 
-  if (ev?.kind === 30023) {
+  if (ev?.kind === 1) {
     const metadata = ev && getMetadata(ev);
     return metadata ? (
       <Link to={`/a/${naddr}`}>{metadata?.title || naddr}</Link>

@@ -13,9 +13,9 @@ export default function Tag() {
   const { t } = useParams();
   const { seenByRelay, events } = useNostrEvents({
     filter: {
-      kinds: [30023],
+      kinds: [1],
       "#t": [t],
-      limit: 256,
+      limit: 15,
     },
   });
   const addresses = events.map(eventAddress);

@@ -22,7 +22,7 @@ export default function Search() {
   const { seen, events } = useNostrEvents({
     id: query,
     filter: {
-      kinds: [30023],
+      kinds: [1],
       search: query,
       limit: 256,
     },
