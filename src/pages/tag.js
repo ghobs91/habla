@@ -30,7 +30,7 @@ export default function Tag() {
       <Layout
         aside={
           <Flex flexDirection="column" as="aside" width={320} p={4} pr={12}>
-            <Authors events={events} />
+            {/* <Authors events={events} /> */}
             <Relays mb={6} />
           </Flex>
         }
